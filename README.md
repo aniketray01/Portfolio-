@@ -61,9 +61,9 @@ The app will be available at `http://localhost:5173`.
 
 ## 🏗️ Deployment
 
-This project is configured for easy deployment on **Vercel** or **Netlify**.
+This project is deployed on **Vercel**.
 
-> **Note:** Vercel link will be configured soon.
+🔗 **Live Demo:** [portfolio-tawny-seven-20.vercel.app](https://portfolio-tawny-seven-20.vercel.app/)
 
 ## 📄 License
 
