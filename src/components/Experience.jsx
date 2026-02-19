@@ -56,10 +56,11 @@ const Experience = () => {
             location: 'New Delhi, India',
             period: '11/2023 - Present',
             details: [
-                'Architected 15+ React components and RESTful Node.js APIs processing 10,000+ monthly transactions.',
-                'Reduced API response latency by 40% through MongoDB query optimization.',
-                'Engineered automated invoice generation system improving accuracy by 95%.',
-                'Maintained Linux production servers with 99.8% uptime.'
+                'Architected and implemented 20+ reusable React components and secure RESTful APIs, streamlining development workflow and handling 10,000+ monthly data points.',
+                'Boosted system performance by 40% through advanced MongoDB query optimization, indexing strategies, and efficient data caching techniques.',
+                'Engineered an automated invoice generation and processing system, eliminating manual errors and improving billing accuracy by 95% for enterprise clients.',
+                'Spearheaded the integration of real-time monitoring tools, maintaining 99.9% uptime for production Linux servers through proactive troubleshooting and CI/CD maintenance.',
+                'Collaborated with cross-functional teams to translate business requirements into scalable technical solutions, reducing project delivery time by 15%.'
             ]
         }
     ];
