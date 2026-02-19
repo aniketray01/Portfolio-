@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Layout, Server } from 'lucide-react';
 
-const ProjectCard = ({ title, description, tech, index, icon: Icon }) => (
+const ProjectCard = ({ title, description, tech, index, icon: Icon, github, live, image }) => (
     <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -11,16 +11,41 @@ const ProjectCard = ({ title, description, tech, index, icon: Icon }) => (
         className="glass group p-2 transition-all duration-500 hover:border-accent-primary/50"
     >
         <div className="relative overflow-hidden rounded-xl aspect-video mb-6 bg-bg-secondary flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/20 to-accent-secondary/10 group-hover:opacity-100 opacity-40 transition-opacity"></div>
-            <Icon size={48} className="text-white/10 group-hover:text-white/30 group-hover:scale-125 transition-all duration-700" />
+            {image ? (
+                <img
+                    src={image}
+                    alt={title}
+                    className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                />
+            ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/20 to-accent-secondary/10 group-hover:opacity-100 opacity-40 transition-opacity"></div>
+            )}
 
-            <div className="absolute bottom-4 left-4 right-4 flex justify-end gap-3 translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
-                <a href="#" className="p-2.5 glass rounded-full hover:bg-accent-primary hover:text-white transition-all shadow-xl">
-                    <Github size={18} />
-                </a>
-                <a href="#" className="p-2.5 glass rounded-full hover:bg-accent-primary hover:text-white transition-all shadow-xl">
-                    <ExternalLink size={18} />
-                </a>
+            <div className="absolute inset-0 bg-bg-primary/20 group-hover:bg-transparent transition-colors duration-500"></div>
+
+            <Icon size={48} className="relative z-10 text-white/10 group-hover:text-white/80 group-hover:scale-125 transition-all duration-700" />
+
+            <div className="absolute bottom-4 left-4 right-4 flex justify-end gap-3 translate-y-12 group-hover:translate-y-0 transition-transform duration-300 z-20">
+                {github && (
+                    <a
+                        href={github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2.5 glass rounded-full hover:bg-accent-primary hover:text-white transition-all shadow-xl"
+                    >
+                        <Github size={18} />
+                    </a>
+                )}
+                {live && (
+                    <a
+                        href={live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2.5 glass rounded-full hover:bg-accent-primary hover:text-white transition-all shadow-xl"
+                    >
+                        <ExternalLink size={18} />
+                    </a>
+                )}
             </div>
         </div>
 
@@ -45,14 +70,20 @@ const Projects = () => {
         {
             title: 'EquiPay',
             icon: Layout,
-            description: 'Advanced expense sharing platform with graph-based debt simplification logic. Features real-time balance tracking and settlement algorithms.',
-            tech: ['React.js', 'Node.js', 'MongoDB', 'Framer Motion'],
+            image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop',
+            description: 'Full-stack expense sharing platform with graph-based debt simplification. Features real-time balance tracking, Firebase authentication, and interactive data visualization with Recharts.',
+            tech: ['React', 'Node.js', 'MongoDB', 'Firebase', 'Socket.io', 'Recharts'],
+            github: 'https://github.com/aniketray01/EquiPay',
+            live: 'https://equi-pay-xi.vercel.app/'
         },
         {
             title: 'Rich Text Editor',
             icon: Server,
-            description: 'Proprietary WYSIWYG editor engine built from scratch. Supports complex document formatting and real-time state persistence.',
-            tech: ['JavaScript', 'DOM API', 'React', 'Tailwind'],
+            image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1000&auto=format&fit=crop',
+            description: 'Professional-grade notes application integrated with React Quill. Implements Redux Toolkit for state management and Framer Motion for high-end declarative animations.',
+            tech: ['React', 'Redux', 'Node.js', 'MongoDB', 'Tailwind', 'Framer Motion'],
+            github: 'https://github.com/aniketray01/NotesApp',
+            live: 'https://notes-app-ten-dun-41.vercel.app'
         }
     ];
 

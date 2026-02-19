@@ -6,14 +6,39 @@ const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [status, setStatus] = useState('idle');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('loading');
-        setTimeout(() => {
-            setStatus('success');
-            setFormData({ name: '', email: '', message: '' });
-            setTimeout(() => setStatus('idle'), 5000);
-        }, 1500);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "41a3155b-a46a-445f-b353-48a88ef5b8bb",
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    subject: `New Portfolio Message from ${formData.name}`,
+                }),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                setStatus('success');
+                setFormData({ name: '', email: '', message: '' });
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                console.error("Error", result);
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error("Error", error);
+            setStatus('error');
+        }
     };
 
     return (
@@ -99,13 +124,17 @@ const Contact = () => {
                             disabled={status === 'loading'}
                             className={`w-full py-5 rounded-xl font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-4 transition-all duration-500 overflow-hidden relative group ${status === 'success'
                                     ? 'bg-green-500/20 text-green-500 border border-green-500/50'
-                                    : 'bg-white text-bg-primary hover:bg-opacity-90'
+                                    : status === 'error'
+                                        ? 'bg-red-500/20 text-red-500 border border-red-500/50'
+                                        : 'bg-white text-bg-primary hover:bg-opacity-90'
                                 }`}
                         >
                             {status === 'loading' ? (
                                 <div className="w-5 h-5 border-2 border-bg-primary/30 border-t-bg-primary rounded-full animate-spin"></div>
                             ) : status === 'success' ? (
                                 <><CheckCircle size={18} /> Sent Successfully</>
+                            ) : status === 'error' ? (
+                                <>Failed to Send - Try Again</>
                             ) : (
                                 <><Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> Send Message</>
                             )}
