@@ -37,7 +37,7 @@ function App() {
 
             <footer className="py-12 border-t border-white/5 bg-bg-secondary/30 backdrop-blur-sm mt-32">
                 <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="text-2xl font-black gradient-text tracking-tighter">ANIKET</div>
+                    <div className="text-2xl font-black gradient-text tracking-tighter">ANIKET RAY</div>
                     <p className="text-text-secondary text-sm font-light">
                         © {new Date().getFullYear()} Aniket Ray. Built with React & Tailwind.
                     </p>

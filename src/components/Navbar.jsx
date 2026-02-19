@@ -31,7 +31,7 @@ const Navbar = () => {
                     className="flex items-center gap-3 cursor-pointer"
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
-                    <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-accent-primary/50 shadow-lg">
+                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-accent-primary/50 shadow-lg">
                         <img
                             src="/projects/Aniket Image.jpg"
                             alt="Aniket"
