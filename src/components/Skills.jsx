@@ -34,12 +34,36 @@ const SkillCard = ({ title, skills, icon: Icon, index }) => (
 
 const Skills = () => {
     const skillGroups = [
-        { title: 'Frontend', icon: Layout, skills: ['React.js', 'Redux', 'Tailwind', 'Framer Motion', 'TypeScript'] },
-        { title: 'Backend', icon: Database, skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT', 'Firebase'] },
-        { title: 'Languages', icon: Code2, skills: ['JavaScript', 'TypeScript', 'C++', 'SQL'] },
-        { title: 'Databases', icon: Terminal, skills: ['MongoDB', 'MySQL', 'Oracle', 'Optimization'] },
-        { title: 'Tools', icon: Cloud, skills: ['Git', 'Docker', 'Vercel', 'Render', 'CI/CD'] },
-        { title: 'Core CS', icon: ShieldCheck, skills: ['DSA', 'OOPS', 'DBMS', 'OS', 'Networking'] }
+        {
+            title: 'Frontend',
+            icon: Layout,
+            skills: ['React.js', 'Next.js', 'Redux Toolkit', 'Context API', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Recharts', 'React Quill']
+        },
+        {
+            title: 'Backend',
+            icon: Database,
+            skills: ['Node.js', 'Express.js', 'RESTful APIs', 'Socket.io', 'JWT Auth', 'Firebase', 'Mongoose', 'Middleware']
+        },
+        {
+            title: 'Languages',
+            icon: Code2,
+            skills: ['JavaScript (ES6+)', 'TypeScript', 'C++', 'Python', 'SQL', 'HTML5/CSS3']
+        },
+        {
+            title: 'Databases',
+            icon: Terminal,
+            skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'Oracle SQL', 'Query Optimization', 'Indexing']
+        },
+        {
+            title: 'DevOps & Tools',
+            icon: Cloud,
+            skills: ['Git/GitHub', 'Docker', 'Linux/Bash', 'Vercel', 'Render', 'CI/CD Pipelines', 'Postman']
+        },
+        {
+            title: 'Computer Science',
+            icon: ShieldCheck,
+            skills: ['Data Structures', 'Algorithms', 'OOPS', 'DBMS', 'Operating Systems', 'System Design']
+        }
     ];
 
     return (
