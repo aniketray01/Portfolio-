@@ -37,32 +37,32 @@ const Skills = () => {
         {
             title: 'Frontend',
             icon: Layout,
-            skills: ['React.js', 'Next.js', 'Redux Toolkit', 'Context API', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Recharts', 'React Quill']
+            skills: ['React.js', 'Next.js', 'Tailwind CSS', 'JavaScript (ES6+)', 'TypeScript']
         },
         {
             title: 'Backend',
             icon: Database,
-            skills: ['Node.js', 'Express.js', 'RESTful APIs', 'Socket.io', 'JWT Auth', 'Firebase', 'Mongoose', 'Middleware']
-        },
-        {
-            title: 'Languages',
-            icon: Code2,
-            skills: ['JavaScript (ES6+)', 'TypeScript', 'C++', 'Python', 'SQL', 'HTML5/CSS3']
+            skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication']
         },
         {
             title: 'Databases',
             icon: Terminal,
-            skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'Oracle SQL', 'Query Optimization', 'Indexing']
+            skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'Query Optimization']
+        },
+        {
+            title: 'Core CS',
+            icon: ShieldCheck,
+            skills: ['Data Structures', 'Algorithms', 'OOPs', 'DBMS', 'Operating Systems', 'System Design']
         },
         {
             title: 'DevOps & Tools',
             icon: Cloud,
-            skills: ['Git/GitHub', 'Docker', 'Linux/Bash', 'Vercel', 'Render', 'CI/CD Pipelines', 'Postman']
+            skills: ['Git & GitHub', 'Docker', 'CI/CD Pipelines', 'Linux / Bash', 'Postman', 'Vercel', 'Render']
         },
         {
-            title: 'Computer Science',
-            icon: ShieldCheck,
-            skills: ['Data Structures', 'Algorithms', 'OOPS', 'DBMS', 'Operating Systems', 'System Design']
+            title: 'Advanced Features',
+            icon: Code2,
+            skills: ['Redux Toolkit', 'Context API', 'Socket.io', 'Firebase', 'Framer Motion', 'Recharts']
         }
     ];
 
